@@ -1,0 +1,180 @@
+/* ============================================================
+   RESPONSIVE — Mobile & Tablet Breakpoints
+   ============================================================ */
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  :root {
+    --sp-xl: 24px;
+    --sp-2xl: 32px;
+  }
+
+  /* Section 1: Stack to single column */
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+    min-height: auto;
+    padding: var(--sp-xl) 0;
+  }
+
+  .intro-right {
+    min-height: 150px;
+  }
+
+  /* Section 2: 2 columns, last item spans full */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-lg);
+  }
+
+  .skills-grid .skill-box:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    justify-self: center;
+  }
+
+  /* Section 3: 2 columns then 1 */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-lg);
+  }
+
+  .projects-grid .project-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 60%;
+    justify-self: center;
+  }
+
+  /* Section 5: Stack doorways */
+  .lobby-grid {
+    gap: var(--sp-xl);
+  }
+
+  .marine-guard { display: none; }
+}
+
+
+/* ── Mobile (≤ 768px) ── */
+@media (max-width: 768px) {
+  :root {
+    --sp-xl: 16px;
+    --sp-2xl: 24px;
+    --sp-3xl: 40px;
+  }
+
+  .arc-section {
+    padding: var(--sp-md);
+  }
+
+  /* Section 1 */
+  .hero-text-box {
+    padding: var(--sp-lg) var(--sp-md);
+  }
+
+  .hero-text-box h1 {
+    font-size: clamp(12px, 4vw, 18px);
+    line-height: 2.2;
+  }
+
+  .hero-text-box h2 {
+    font-size: clamp(8px, 2.5vw, 12px);
+  }
+
+  .intro-right {
+    min-height: 100px;
+  }
+
+  /* Section 2: Single column */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .skills-grid .skill-box:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  /* Section 3: Single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-md);
+  }
+
+  .projects-grid .project-card:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  /* Section 4 */
+  #card-sehha {
+    padding: var(--sp-lg) var(--sp-md);
+  }
+
+  #card-sehha h1 {
+    font-size: clamp(10px, 3.5vw, 18px);
+  }
+
+  /* Section 5: Single column */
+  .lobby-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-lg);
+  }
+
+  .btn-portal {
+    font-size: clamp(6px, 2vw, 9px);
+    padding: var(--sp-sm) var(--sp-md);
+  }
+
+  .golden-quote {
+    font-size: var(--fs-small);
+    padding: 0 var(--sp-sm);
+  }
+
+  /* Luffy scales down slightly on mobile */
+  #luffy-sprite {
+    --luffy-h: 32px;
+    --luffy-w: 35px;
+    --luffy-sheet-h: 64px;
+    width: var(--luffy-w);
+    height: var(--luffy-h);
+    background-size: var(--luffy-w) var(--luffy-sheet-h);
+  }
+
+  #luffy-sprite.is-idle {
+    background-position: 0 -32px;
+  }
+  #luffy-sprite.is-landing {
+    background-position: 0 -32px;
+  }
+}
+
+
+/* ── Small Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .hero-text-box h1 {
+    font-size: 11px;
+    line-height: 2.4;
+  }
+
+  .hero-text-box h2 {
+    font-size: 7px;
+    line-height: 2;
+  }
+
+  .hero-cta {
+    font-size: 7px;
+  }
+
+  .skill-box h3,
+  .target-textbox,
+  .bounty-banner .wanted-tag,
+  .production-status,
+  .door-header {
+    font-size: 7px;
+  }
+
+  .bounty-banner .bounty-value {
+    font-size: 10px;
+  }
+}

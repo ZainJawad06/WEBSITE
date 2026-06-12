@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohammed Zain Jawad — Full-Stack Developer & Creative UI Architect. An immersive One Piece themed pixel-art portfolio navigating the Digital Grand Line.">
+  <title>Mohammed Zain Jawad // The Digital Grand Line</title>
+
+  <!-- ── CSS Architecture ── -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/luffy.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       LUFFY SPRITE — Fixed Global Character Stage Overlay
+       Covers viewport, pointer-events: none, z-index: 999
+       ══════════════════════════════════════════════════════════════ -->
+  <div id="luffy-stage">
+    <div id="luffy-sprite" class="is-idle"></div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 1 — #arc-intro (Welcome Island / Title Screen)
+       Background: bg1.png (Foosha Village sunrise dock)
+       Landing Pad: 75% x, 80% y
+       ══════════════════════════════════════════════════════════════ -->
+  <section
+    id="arc-intro"
+    class="arc-section"
+    data-luffy-x="75%"
+    data-luffy-y="80%"
+  >
+    <div class="intro-grid">
+
+      <!-- Left Column: Hero Text -->
+      <div class="intro-left">
+        <div class="hero-text-box">
+          <h1>MOHAMMED ZAIN JAWAD</h1>
+          <h2>FULL-STACK DEVELOPER &amp; CAPTAIN OF CODE</h2>
+          <div class="hero-cta" aria-label="Scroll prompt">
+            ▼ SCROLL TO SET SAIL
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Landing Dock -->
+      <div class="intro-right">
+        <div
+          class="landing-dock"
+          data-luffy-x="75%"
+          data-luffy-y="80%"
+        ></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 2 — #arc-skills (Devil Fruit Inventory / Skill Deck)
+       Background: bg2.png (Going Merry pirate ship deck)
+       Default Landing Pad: 50% x, 35% y
+       ══════════════════════════════════════════════════════════════ -->
+  <section
+    id="arc-skills"
+    class="arc-section"
+    data-luffy-x="50%"
+    data-luffy-y="35%"
+  >
+    <div class="skills-grid">
+
+      <!-- Skill Box 1: UI/UX Architecture -->
+      <div
+        class="skill-box"
+        id="skill-ui"
+        data-jump-x="20%"
+        data-jump-y="35%"
+      >
+        <h3>[VIRTUAL VOYAGE // UI/UX]</h3>
+        <p>
+          Map out seamless user journeys and high-fidelity wireframes using Figma.
+          Crafting pixel-perfect design systems, interactive prototypes, and intuitive
+          layouts that bridge the gap between creative storytelling and modern frontend
+          implementation.
+        </p>
+      </div>
+
+      <!-- Skill Box 2: Prompt Engineering -->
+      <div
+        class="skill-box"
+        id="skill-prompt"
+        data-jump-x="50%"
+        data-jump-y="35%"
+      >
+        <h3>[THE LOG POSE // PROMPT ENGINEER]</h3>
+        <p>
+          Guiding advanced AI models and large language engines to generate
+          production-grade code, tailored automation, and highly contextual logic.
+          Optimizing token efficiency and structure to turn raw agentic workflows
+          into refined digital assets.
+        </p>
+      </div>
+
+      <!-- Skill Box 3: Core Engineering -->
+      <div
+        class="skill-box"
+        id="skill-code"
+        data-jump-x="80%"
+        data-jump-y="35%"
+      >
+        <h3>[IRON ENGINE // PYTHON &amp; C]</h3>
+        <p>
+          Writing lean, high-performance backends and structural algorithms. From
+          memory-efficient low-level execution paths in C to rapid application
+          development and automation scripts in Python, building the heavy machinery
+          that powers the application.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 3 — #arc-projects (Bounty Poster Gallery)
+       Background: bg3.png (Night moon heavy seas)
+       3 Bounty Cards with hover/idle coordinates
+       ══════════════════════════════════════════════════════════════ -->
+  <section
+    id="arc-projects"
+    class="arc-section"
+    data-luffy-x="50%"
+    data-luffy-y="42%"
+  >
+    <div class="projects-grid">
+
+      <!-- Card 1: Stock Analyser -->
+      <div
+        class="project-card"
+        id="card-stock"
+        data-hover-x="17%"
+        data-hover-y="28%"
+        data-idle-x="17%"
+        data-idle-y="42%"
+      >
+        <div class="target-textbox">[ALGORITHMIC FORECAST // SYSTEM RUNNING]</div>
+        <div class="bounty-banner">
+          <span class="wanted-tag">WANTED: THE MARKET MANIPULATOR</span>
+          <span class="bounty-value">฿1,450,000,000</span>
+        </div>
+        <div class="card-body">
+          <h2>STOCK ANALYSER</h2>
+          <p>
+            An advanced financial intelligence engine designed to scrape, clean, and
+            analyze market trends. Built using complex data modeling to track stock
+            volatility, visualize trading volumes, and generate predictive vectors,
+            giving traders a mathematical edge across the grand line of equity.
+          </p>
+        </div>
+        <div class="card-actions">
+          <a
+            href="https://stocksensieai-fzm.streamlit.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-deploy"
+            id="btn-stock-deploy"
+          >[ LAUNCH DEPLOYMENT ]</a>
+        </div>
+      </div>
+
+      <!-- Card 2: IoT Expo Project -->
+      <div
+        class="project-card"
+        id="card-iot"
+        data-hover-x="50%"
+        data-hover-y="28%"
+        data-idle-x="50%"
+        data-idle-y="42%"
+      >
+        <div class="target-textbox">[PHYSICAL COMPONENT MESH // LIVE EVENT]</div>
+        <div class="bounty-banner">
+          <span class="wanted-tag">WANTED: THE AUTOMATION ENGINEER</span>
+          <span class="bounty-value">฿2,100,000,000</span>
+        </div>
+        <div class="card-body">
+          <h2>AQUA-SENSE (AQUAGUARD)</h2>
+          <p>
+            A comprehensive smart water level management and proactive leak detection
+            ecosystem. A fully integrated hardware-to-software mesh ecosystem built for
+            real-time sensor array orchestration. Synchronizing low-level device signals
+            with custom dashboards to monitor ambient environmental metrics, managing
+            concurrent socket data streams flawlessly under high network stress.
+          </p>
+        </div>
+        <div class="card-actions">
+          <div class="badge-status" id="badge-iot-status">
+            <span class="pulse-dot"></span>
+            DEPLOYED / COMPLETED
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Enterprise AI Project -->
+      <div
+        class="project-card"
+        id="card-aegis"
+        data-hover-x="83%"
+        data-hover-y="28%"
+        data-idle-x="83%"
+        data-idle-y="42%"
+      >
+        <div class="target-textbox">[NEURAL THREAT MATRIX // LIVE CAMPUS GRID]</div>
+        <div class="bounty-banner">
+          <span class="wanted-tag">WANTED: THE SENTINEL ARCHITECT</span>
+          <span class="bounty-value">฿2,850,000,000</span>
+        </div>
+        <div class="card-body">
+          <h2>AEGIS.AI</h2>
+          <p>
+            An enterprise-grade emergency university security intelligence system
+            engineered for students. A multi-layered AI guardrail infrastructure built
+            to monitor distributed video grids, instantly classifying critical risk
+            scenarios like weapons detection and unethical activities in the campus.
+          </p>
+        </div>
+        <div class="card-actions">
+          <a
+            href="https://github.com/ZainJawad06/AegisAI_10"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-deploy"
+            id="btn-aegis-deploy"
+          >[ LAUNCH DEPLOYMENT ]</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 4 — #arc-production (Construction Bay / Water 7)
+       Background: bg4.png (Water 7 canals and shipyards)
+       Landing Pad: 50% x, 30% y (top of card roof)
+       ══════════════════════════════════════════════════════════════ -->
+  <section
+    id="arc-production"
+    class="arc-section"
+    data-luffy-x="50%"
+    data-luffy-y="30%"
+  >
+    <div class="production-center">
+      <div id="card-sehha" data-luffy-x="50%" data-luffy-y="30%">
+        <strong class="production-status">
+          ⚠️ UNDER CONSTRUCTION // STATE: IN PRODUCTION
+        </strong>
+        <h1>PROJECT: SEHHA<br><span style="font-size: 0.6em; color: var(--color-text-secondary);">THE MEDICAL GALLEON</span></h1>
+        <p>
+          A highly scalable, intelligent health-tracking ecosystem engineered to
+          centralize patient metrics and streamline wellness diagnostics. Integrating
+          secure, real-time data streaming layers with automated alert protocols, this
+          platform maps out complex physiological vitals into clean, digestible visual
+          dashboards, ensuring high-integrity performance when tracking medical data
+          across the network.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION 5 — #arc-enies-lobby (Final Portal / Enies Lobby)
+       Background: bg5.png (Tower of Justice)
+       Doorway 1 (GitHub): 25% x, 30% y | Button: 25% x, 55% y
+       Doorway 2 (LinkedIn): 75% x, 30% y | Button: 75% x, 55% y
+       ══════════════════════════════════════════════════════════════ -->
+  <section
+    id="arc-enies-lobby"
+    class="arc-section"
+    data-luffy-x="25%"
+    data-luffy-y="30%"
+  >
+    <div class="lobby-grid">
+
+      <!-- Doorway 1: GitHub -->
+      <div
+        class="doorway"
+        id="door-github"
+        data-luffy-x="25%"
+        data-luffy-y="30%"
+        data-btn-x="25%"
+        data-btn-y="55%"
+      >
+        <div class="door-header" id="header-github">
+          [ TARGET: GATE OF LIBERATION ]
+        </div>
+        <div class="door-body">
+          <!-- Marine Guards -->
+          <span class="marine-guard left"></span>
+          <span class="marine-guard right"></span>
+
+          <a
+            href="https://github.com/ZainJawad06"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-portal btn-portal--github"
+            id="btn-github"
+          >[ ACCESS GITHUB REPOSITORIES ]</a>
+        </div>
+      </div>
+
+      <!-- Doorway 2: LinkedIn -->
+      <div
+        class="doorway"
+        id="door-linkedin"
+        data-luffy-x="75%"
+        data-luffy-y="30%"
+        data-btn-x="75%"
+        data-btn-y="55%"
+      >
+        <div class="door-header" id="header-linkedin">
+          [ TARGET: WORLD COALITION ]
+        </div>
+        <div class="door-body">
+          <!-- Marine Guards -->
+          <span class="marine-guard left"></span>
+          <span class="marine-guard right"></span>
+
+          <a
+            href="https://www.linkedin.com/in/mohammed-zain-jawad-805052386"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-portal btn-portal--linkedin"
+            id="btn-linkedin"
+          >[ CONNECT VIA LINKEDIN ]</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- The Concluding Quote -->
+    <footer class="lobby-footer">
+      <blockquote class="golden-quote">
+        "Inherited Will, The Destiny of Age, and The Dreams of People.
+        As long as people continue to pursue the meaning of Freedom,
+        these things will never cease to be!"
+        <cite class="quote-author">— Gol D. Roger</cite>
+      </blockquote>
+    </footer>
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SCRIPTS — GSAP CDN + Custom Modules
+       ══════════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/luffy-controller.js"></script>
+  <script src="js/engine.js"></script>
+  <script src="js/section-intro.js"></script>
+  <script src="js/section-skills.js"></script>
+  <script src="js/section-projects.js"></script>
+  <script src="js/section-production.js"></script>
+  <script src="js/section-lobby.js"></script>
+
+</body>
+</html>

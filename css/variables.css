@@ -1,0 +1,102 @@
+/* ============================================================
+   DESIGN TOKENS — ONE PIECE PIXEL PORTFOLIO
+   All CSS custom properties for consistent theming.
+   ============================================================ */
+
+:root {
+  /* ── Color Palette ── */
+  --color-bg-dark:        #080810;
+  --color-bg-card:        rgba(10, 10, 25, 0.85);
+  --color-bg-hero:        rgba(8, 8, 20, 0.80);
+  --color-bg-parchment:   #c4a46c;
+  --color-bg-parchment-d: #a8874f;
+  --color-bg-industrial:  rgba(20, 22, 30, 0.90);
+
+  --color-border-pixel:   #3a3a5c;
+  --color-border-wood:    #8B5E3C;
+  --color-border-wood-lt: #a97c50;
+  --color-border-stone:   #6b6b7b;
+  --color-border-metal:   #7a7a8a;
+
+  --color-text-primary:   #e0e0ec;
+  --color-text-secondary: #a8a8c0;
+  --color-text-heading:   #ffd700;
+  --color-text-accent:    #ff6b35;
+  --color-text-bounty:    #d4a017;
+  --color-text-golden:    #ffd700;
+  --color-text-danger:    #ff4444;
+  --color-text-terminal:  #00ff88;
+
+  --color-btn-deploy:     #00ff88;
+  --color-btn-deploy-bg:  rgba(0, 255, 136, 0.12);
+  --color-btn-github:     #e84040;
+  --color-btn-github-bg:  rgba(232, 64, 64, 0.15);
+  --color-btn-linkedin:   #0a8aff;
+  --color-btn-linkedin-bg:rgba(10, 138, 255, 0.15);
+
+  --color-status-active:  #00ff66;
+  --color-status-warning: #ffaa00;
+  --color-status-danger:  #ff3333;
+
+  --color-marine-hat:     #1a1a3a;
+  --color-marine-body:    #3b4cca;
+  --color-marine-skin:    #f4c28c;
+
+  /* ── Typography ── */
+  --font-heading:  'Press Start 2P', monospace;
+  --font-body:     'VT323', monospace;
+
+  --fs-hero:    clamp(16px, 3vw, 28px);
+  --fs-h1:      clamp(14px, 2.5vw, 24px);
+  --fs-h2:      clamp(10px, 2vw, 16px);
+  --fs-h3:      clamp(8px, 1.5vw, 12px);
+  --fs-body:    clamp(18px, 2.5vw, 24px);
+  --fs-small:   clamp(14px, 1.8vw, 18px);
+  --fs-micro:   clamp(7px, 1vw, 9px);
+  --fs-bounty:  clamp(12px, 2vw, 20px);
+  --fs-cta:     clamp(8px, 1.2vw, 11px);
+
+  /* ── Spacing Scale ── */
+  --sp-2xs:  2px;
+  --sp-xs:   4px;
+  --sp-sm:   8px;
+  --sp-md:   16px;
+  --sp-lg:   24px;
+  --sp-xl:   32px;
+  --sp-2xl:  48px;
+  --sp-3xl:  64px;
+
+  /* ── Borders ── */
+  --border-pixel:  4px solid var(--color-border-pixel);
+  --border-wood:   4px solid var(--color-border-wood);
+  --border-stone:  4px solid var(--color-border-stone);
+  --border-metal:  4px solid var(--color-border-metal);
+
+  /* ── Shadows ── */
+  --shadow-retro:       4px 4px 0px rgba(0, 0, 0, 0.6);
+  --shadow-retro-sm:    2px 2px 0px rgba(0, 0, 0, 0.5);
+  --shadow-inset-dark:  inset 0 0 20px rgba(0, 0, 0, 0.4);
+  --shadow-glow-green:  0 0 8px rgba(0, 255, 136, 0.5), 0 0 20px rgba(0, 255, 136, 0.15);
+  --shadow-glow-blue:   0 0 8px rgba(10, 138, 255, 0.5), 0 0 20px rgba(10, 138, 255, 0.15);
+  --shadow-glow-red:    0 0 8px rgba(232, 64, 64, 0.5), 0 0 20px rgba(232, 64, 64, 0.15);
+  --shadow-glow-gold:   0 0 8px rgba(255, 215, 0, 0.4), 0 0 24px rgba(255, 215, 0, 0.15);
+
+  /* ── Luffy Sprite ── */
+  /* Source: 4512×8192, 2 vertical frames (each 4512×4096)
+     Display: 42px height per frame → width ≈ 46px */
+  --luffy-h:      42px;
+  --luffy-w:      46px;
+  --luffy-sheet-h: 84px;  /* 2 frames × 42px */
+
+  /* ── Timing ── */
+  --dur-fast:   0.15s;
+  --dur-normal: 0.3s;
+  --dur-slow:   0.6s;
+
+  /* ── Z-Index Stack ── */
+  --z-bg:       1;
+  --z-content:  10;
+  --z-card:     20;
+  --z-overlay:  100;
+  --z-luffy:    999;
+}

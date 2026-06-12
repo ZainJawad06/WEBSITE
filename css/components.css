@@ -1,0 +1,543 @@
+/* ============================================================
+   COMPONENTS — UI Elements Across All Sections
+   ============================================================ */
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 1 — Hero Text Box & CTA
+   ═══════════════════════════════════════════════════════════════ */
+
+.hero-text-box {
+  background: var(--color-bg-hero);
+  border: var(--border-pixel);
+  box-shadow:
+    var(--shadow-retro),
+    var(--shadow-inset-dark),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  padding: var(--sp-2xl) var(--sp-xl);
+  position: relative;
+}
+
+/* Decorative corner ticks */
+.hero-text-box::before,
+.hero-text-box::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--color-text-heading);
+  border-style: solid;
+}
+.hero-text-box::before {
+  top: -2px;
+  left: -2px;
+  border-width: 3px 0 0 3px;
+}
+.hero-text-box::after {
+  bottom: -2px;
+  right: -2px;
+  border-width: 0 3px 3px 0;
+}
+
+.hero-text-box h1 {
+  font-size: var(--fs-hero);
+  color: var(--color-text-heading);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 215, 0, 0.3);
+  margin-bottom: var(--sp-lg);
+  line-height: 2;
+}
+
+.hero-text-box h2 {
+  font-size: var(--fs-h2);
+  color: var(--color-text-accent);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.7);
+  margin-bottom: var(--sp-2xl);
+  line-height: 1.8;
+}
+
+.hero-cta {
+  font-family: var(--font-heading);
+  font-size: var(--fs-cta);
+  color: var(--color-text-terminal);
+  letter-spacing: 2px;
+  animation: blink-cta 1.2s step-end infinite;
+  padding-top: var(--sp-md);
+  border-top: 2px solid var(--color-border-pixel);
+}
+
+@keyframes blink-cta {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 2 — Skill Cargo Crate Boxes
+   ═══════════════════════════════════════════════════════════════ */
+
+.skill-box {
+  background: var(--color-bg-card);
+  border: var(--border-wood);
+  box-shadow:
+    var(--shadow-retro),
+    var(--shadow-inset-dark),
+    inset 0 0 0 2px var(--color-border-wood-lt);
+  padding: var(--sp-lg) var(--sp-md);
+  position: relative;
+  cursor: default;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Wooden plank line decoration */
+.skill-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-border-wood) 0px,
+    var(--color-border-wood) 8px,
+    var(--color-border-wood-lt) 8px,
+    var(--color-border-wood-lt) 10px
+  );
+}
+
+.skill-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-border-wood) 0px,
+    var(--color-border-wood) 8px,
+    var(--color-border-wood-lt) 8px,
+    var(--color-border-wood-lt) 10px
+  );
+}
+
+.skill-box:hover {
+  border-color: var(--color-text-heading);
+  box-shadow:
+    var(--shadow-retro),
+    var(--shadow-glow-gold),
+    inset 0 0 0 2px var(--color-border-wood-lt);
+}
+
+.skill-box h3 {
+  font-size: var(--fs-h3);
+  color: var(--color-text-heading);
+  margin-bottom: var(--sp-md);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  line-height: 1.8;
+}
+
+.skill-box p {
+  font-size: var(--fs-small);
+  line-height: 1.7;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 3 — Bounty Poster Project Cards
+   ═══════════════════════════════════════════════════════════════ */
+
+.project-card {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(196, 164, 108, 0.12) 0%,
+      rgba(10, 10, 25, 0.92) 15%,
+      rgba(10, 10, 25, 0.95) 100%
+    );
+  border: var(--border-pixel);
+  box-shadow: var(--shadow-retro), var(--shadow-inset-dark);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.project-card:hover {
+  border-color: var(--color-text-bounty);
+  box-shadow: var(--shadow-retro), var(--shadow-glow-gold);
+}
+
+/* Target textbox — Luffy's hover landing zone */
+.target-textbox {
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-text-terminal);
+  padding: var(--sp-sm) var(--sp-md);
+  background: rgba(0, 255, 136, 0.06);
+  border-bottom: 2px solid rgba(0, 255, 136, 0.15);
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.4);
+}
+
+/* Bounty classification banner */
+.bounty-banner {
+  padding: var(--sp-md);
+  text-align: center;
+  border-bottom: 2px solid var(--color-border-pixel);
+}
+
+.bounty-banner .wanted-tag {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-text-danger);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  display: block;
+  margin-bottom: var(--sp-xs);
+  letter-spacing: 2px;
+}
+
+.bounty-banner .bounty-value {
+  font-family: var(--font-heading);
+  font-size: var(--fs-bounty);
+  color: var(--color-text-bounty);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8), 0 0 10px rgba(212, 160, 23, 0.3);
+  display: block;
+}
+
+/* Card body content */
+.card-body {
+  padding: var(--sp-md);
+}
+
+.card-body h2 {
+  font-size: var(--fs-h3);
+  color: var(--color-text-heading);
+  margin-bottom: var(--sp-sm);
+  line-height: 1.8;
+}
+
+.card-body p {
+  font-size: var(--fs-small);
+  line-height: 1.7;
+  margin-bottom: var(--sp-md);
+}
+
+/* Card footer actions */
+.card-actions {
+  padding: var(--sp-md);
+  border-top: 2px solid var(--color-border-pixel);
+}
+
+/* Deploy button */
+.btn-deploy {
+  display: block;
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-btn-deploy);
+  background: var(--color-btn-deploy-bg);
+  border: 2px solid var(--color-btn-deploy);
+  padding: var(--sp-sm) var(--sp-md);
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px rgba(0, 255, 136, 0.5);
+  box-shadow: var(--shadow-glow-green);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+
+.btn-deploy:hover {
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow:
+    0 0 12px rgba(0, 255, 136, 0.6),
+    0 0 30px rgba(0, 255, 136, 0.25);
+}
+
+/* Status badge (for completed projects) */
+.badge-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-status-active);
+  background: rgba(0, 255, 102, 0.06);
+  border: 2px solid rgba(0, 255, 102, 0.3);
+  padding: var(--sp-sm) var(--sp-md);
+  letter-spacing: 2px;
+  cursor: default;
+}
+
+.badge-status .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-status-active);
+  box-shadow: 0 0 4px var(--color-status-active);
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.7); }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 4 — Sehha Production Card
+   ═══════════════════════════════════════════════════════════════ */
+
+#card-sehha {
+  width: 100%;
+  background: var(--color-bg-industrial);
+  border: var(--border-metal);
+  box-shadow:
+    var(--shadow-retro),
+    var(--shadow-inset-dark),
+    inset 0 0 0 2px rgba(122, 122, 138, 0.2);
+  padding: var(--sp-2xl) var(--sp-xl);
+  position: relative;
+}
+
+/* Inner neon grid accent line */
+#card-sehha::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-status-warning) 20%,
+    var(--color-status-warning) 80%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+.production-status {
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-status-warning);
+  text-shadow: 0 0 8px rgba(255, 170, 0, 0.5);
+  letter-spacing: 2px;
+  margin-bottom: var(--sp-lg);
+  animation: pulse-status 2s ease-in-out infinite;
+}
+
+@keyframes pulse-status {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+#card-sehha h1 {
+  font-size: var(--fs-h1);
+  color: var(--color-text-heading);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.8), 0 0 16px rgba(255, 215, 0, 0.2);
+  margin-bottom: var(--sp-lg);
+  line-height: 1.8;
+}
+
+#card-sehha p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   SECTION 5 — Enies Lobby Doorway Portals
+   ═══════════════════════════════════════════════════════════════ */
+
+.doorway {
+  position: relative;
+  background: rgba(10, 10, 25, 0.88);
+  border: var(--border-stone);
+  box-shadow: var(--shadow-retro), var(--shadow-inset-dark);
+  padding: 0;
+  overflow: visible;
+}
+
+.door-header {
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-text-secondary);
+  padding: var(--sp-md);
+  text-align: center;
+  border-bottom: 2px solid var(--color-border-stone);
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: color 0.2s, background 0.2s;
+  background: rgba(107, 107, 123, 0.08);
+}
+
+.door-header:hover {
+  color: var(--color-text-heading);
+  background: rgba(255, 215, 0, 0.06);
+}
+
+.door-body {
+  padding: var(--sp-xl) var(--sp-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-lg);
+  position: relative;
+}
+
+/* ── Marine Guards ──
+   Tiny CSS pixel-art marine soldiers flanking each doorway. */
+.marine-guard {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.marine-guard.left  { left: -24px; }
+.marine-guard.right { right: -24px; transform: translateY(-50%) scaleX(-1); }
+
+/* Pixel marine body using box-shadow art (3px pixel grid) */
+.marine-guard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 3px;
+  height: 3px;
+  background: var(--color-marine-hat);
+  box-shadow:
+    /* Hat */
+    3px 0 0 var(--color-marine-hat),
+    -3px 0 0 var(--color-marine-hat),
+    0 -3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px -3px 0 #fff,
+    /* Head */
+    0 3px 0 var(--color-marine-skin),
+    3px 3px 0 var(--color-marine-skin),
+    /* Body */
+    0 6px 0 var(--color-marine-body),
+    3px 6px 0 var(--color-marine-body),
+    -3px 6px 0 var(--color-marine-body),
+    0 9px 0 var(--color-marine-body),
+    3px 9px 0 var(--color-marine-body),
+    -3px 9px 0 var(--color-marine-body),
+    /* Legs */
+    -3px 12px 0 var(--color-marine-hat),
+    3px 12px 0 var(--color-marine-hat),
+    /* Spear */
+    6px -6px 0 #8B7355,
+    6px -3px 0 #8B7355,
+    6px 0 0 #8B7355,
+    6px 3px 0 #8B7355,
+    6px 6px 0 #8B7355,
+    6px 9px 0 #8B7355,
+    6px 12px 0 #8B7355,
+    6px -9px 0 #c0c0c0;
+  animation: guard-bob 2s ease-in-out infinite;
+}
+
+@keyframes guard-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-1px); }
+}
+
+/* Portal buttons */
+.btn-portal {
+  display: block;
+  width: 100%;
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  padding: var(--sp-md) var(--sp-lg);
+  text-align: center;
+  letter-spacing: 2px;
+  border: 3px solid;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.btn-portal:active {
+  transform: translateY(2px);
+}
+
+/* GitHub button — red/warm */
+.btn-portal--github {
+  color: var(--color-btn-github);
+  background: var(--color-btn-github-bg);
+  border-color: var(--color-btn-github);
+  box-shadow: var(--shadow-glow-red);
+}
+.btn-portal--github:hover {
+  background: rgba(232, 64, 64, 0.25);
+  box-shadow:
+    0 0 12px rgba(232, 64, 64, 0.6),
+    0 0 30px rgba(232, 64, 64, 0.2);
+}
+
+/* LinkedIn button — blue/neon */
+.btn-portal--linkedin {
+  color: var(--color-btn-linkedin);
+  background: var(--color-btn-linkedin-bg);
+  border-color: var(--color-btn-linkedin);
+  box-shadow: var(--shadow-glow-blue);
+}
+.btn-portal--linkedin:hover {
+  background: rgba(10, 138, 255, 0.25);
+  box-shadow:
+    0 0 12px rgba(10, 138, 255, 0.6),
+    0 0 30px rgba(10, 138, 255, 0.2);
+}
+
+/* ── Golden Quote Footer ── */
+.golden-quote {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--color-text-golden);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.35);
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 0 auto;
+  animation: golden-pulse 3s ease-in-out infinite;
+}
+
+.golden-quote .quote-author {
+  display: block;
+  margin-top: var(--sp-md);
+  font-family: var(--font-heading);
+  font-size: var(--fs-micro);
+  color: var(--color-text-bounty);
+  letter-spacing: 2px;
+}
+
+@keyframes golden-pulse {
+  0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(255, 215, 0, 0.35); }
+  50%      { opacity: 0.75; text-shadow: 0 0 20px rgba(255, 215, 0, 0.55); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PARTICLE ENGINE — Gold Coins
+   ═══════════════════════════════════════════════════════════════ */
+
+.gold-coin {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle at 3px 3px, #ffe600, #ffb300);
+  border: 1px solid #cc8800;
+  border-radius: 50%;
+  box-shadow: 
+    inset -1px -1px 2px rgba(139, 69, 19, 0.8),
+    0 0 4px rgba(255, 215, 0, 0.8);
+  pointer-events: none;
+  z-index: 1000;
+  will-change: transform, opacity;
+}

@@ -1,0 +1,153 @@
+/* ============================================================
+   LUFFY — Character Stage, Sprite States, & Animations
+   Sprite: luffy.png (4512×8192, 2 vertical frames)
+   Frame 0 (top):  Jumping/Active pose  → bg-pos: 0 0
+   Frame 1 (bottom): Idle/Standing pose  → bg-pos: 0 -42px
+   ============================================================ */
+
+/* ── Absolute Document Stage ──
+   Covers entire document length, non-interactive (pointer-events: none).
+   Sits above all content at z-index 999. */
+#luffy-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: var(--z-luffy, 999);
+}
+
+/* ── Sprite Element ──
+   Absolutely positioned within the stage.
+   Uses CSS background-image with sprite sheet.
+   Hardware-accelerated via translate3d + will-change. */
+#luffy-sprite {
+  position: absolute;
+  width: var(--luffy-w, 46px);
+  height: var(--luffy-h, 42px);
+  top: -60px;                           /* Start off-screen */
+  left: 50%;
+  background-image: url('../assets/sprites/luffy.png');
+  background-size: var(--luffy-w, 46px) var(--luffy-sheet-h, 84px);
+  background-repeat: no-repeat;
+  background-position: 0 -42px;         /* Default: idle frame */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  transform: translate3d(0, 0, 0);
+  will-change: transform, top, left;
+  transition: none;                      /* GSAP controls all transitions */
+  filter: drop-shadow(1px 2px 0px rgba(0,0,0,0.4));
+}
+
+/* ── STATE: Idle ──
+   Bottom frame of sprite sheet. Gentle bobbing animation. */
+#luffy-sprite.is-idle {
+  background-position: 0 -42px;
+  animation: luffy-bob 2.4s ease-in-out infinite;
+}
+
+/* ── STATE: Jumping ──
+   Top frame (active/dynamic pose). No bob animation. */
+#luffy-sprite.is-jumping {
+  background-position: 0 0;
+  animation: none;
+}
+
+/* ── STATE: Falling ──
+   Same active frame, slight rotation to simulate tumble. */
+#luffy-sprite.is-falling {
+  background-position: 0 0;
+  animation: none;
+  transform: translate3d(0, 0, 0) rotate(8deg);
+}
+
+/* ── STATE: Landing ──
+   Idle frame with a quick squash-stretch effect. */
+#luffy-sprite.is-landing {
+  background-position: 0 -42px;
+  animation: luffy-squash 0.15s ease-out forwards;
+}
+
+/* ── STATE: Excited ──
+   Active frame with rapid bounce + exclamation mark. */
+#luffy-sprite.is-excited {
+  background-position: 0 0;
+  animation: luffy-excited-bounce 0.12s ease-in-out 2;
+}
+
+/* Show exclamation mark above Luffy when excited */
+#luffy-sprite.is-excited::after {
+  content: '!';
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading, 'Press Start 2P', monospace);
+  font-size: 10px;
+  color: #ffdd00;
+  text-shadow: 1px 1px 0 #000;
+  animation: exclamation-pop 0.3s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ── Dust Puff ──
+   Pseudo-element for landing impact particles. */
+#luffy-sprite.is-landing::before {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(200, 180, 140, 0.7);
+  box-shadow:
+    -8px -2px 0 2px rgba(200, 180, 140, 0.5),
+     8px -2px 0 2px rgba(200, 180, 140, 0.5),
+    -4px -4px 0 1px rgba(200, 180, 140, 0.3),
+     4px -4px 0 1px rgba(200, 180, 140, 0.3);
+  animation: dust-puff 0.3s ease-out forwards;
+  pointer-events: none;
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* Gentle idle floating bob */
+@keyframes luffy-bob {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25%      { transform: translate3d(1px, -3px, 0); }
+  50%      { transform: translate3d(0, -5px, 0); }
+  75%      { transform: translate3d(-1px, -3px, 0); }
+}
+
+/* Landing squash-stretch */
+@keyframes luffy-squash {
+  0%   { transform: translate3d(0, 0, 0) scaleX(1) scaleY(1); }
+  40%  { transform: translate3d(0, 2px, 0) scaleX(1.15) scaleY(0.85); }
+  70%  { transform: translate3d(0, -1px, 0) scaleX(0.95) scaleY(1.05); }
+  100% { transform: translate3d(0, 0, 0) scaleX(1) scaleY(1); }
+}
+
+/* Excited rapid bounce */
+@keyframes luffy-excited-bounce {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%      { transform: translate3d(0, -6px, 0); }
+}
+
+/* Dust puff expansion + fade */
+@keyframes dust-puff {
+  0%   { opacity: 1; transform: translateX(-50%) scale(1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(2.5); }
+}
+
+/* Exclamation pop-in */
+@keyframes exclamation-pop {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(4px) scale(0.3); }
+  50%  { opacity: 1; transform: translateX(-50%) translateY(-2px) scale(1.2); }
+  100% { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}

@@ -1,0 +1,109 @@
+/* ============================================================
+   SECTIONS — Layout & Backgrounds for all 5 Arc Sections
+   ============================================================ */
+
+/* ── Section 1: Welcome Island (#arc-intro) ── */
+#arc-intro {
+  background-image: url('../assets/backgrounds/bg1.png');
+  padding: var(--sp-xl);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: var(--sp-xl);
+  width: 100%;
+  max-width: 1200px;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.intro-right {
+  position: relative;
+  height: 100%;
+  min-height: 300px;
+}
+
+.landing-dock {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 60px;
+  height: 60px;
+}
+
+
+/* ── Section 2: Devil Fruit Inventory (#arc-skills) ── */
+#arc-skills {
+  background-image: url('../assets/backgrounds/bg2.png');
+  padding: var(--sp-xl);
+  flex-direction: column;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-xl);
+  width: 100%;
+  max-width: 1200px;
+  align-items: stretch;
+}
+
+
+/* ── Section 3: Bounty Poster Gallery (#arc-projects) ── */
+#arc-projects {
+  background-image: url('../assets/backgrounds/bg3.png');
+  padding: var(--sp-2xl) var(--sp-xl);
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-lg);
+  width: 100%;
+  max-width: 1300px;
+  align-items: start;
+}
+
+
+/* ── Section 4: Construction Bay (#arc-production) ── */
+#arc-production {
+  background-image: url('../assets/backgrounds/bg4.png');
+  padding: var(--sp-xl);
+}
+
+.production-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+/* ── Section 5: Enies Lobby (#arc-enies-lobby) ── */
+#arc-enies-lobby {
+  background-image: url('../assets/backgrounds/bg5.png');
+  padding: var(--sp-xl) var(--sp-xl) var(--sp-3xl);
+  flex-direction: column;
+  gap: var(--sp-2xl);
+}
+
+.lobby-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-2xl);
+  width: 100%;
+  max-width: 1000px;
+  align-items: start;
+}
+
+.lobby-footer {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  padding: var(--sp-xl) var(--sp-md);
+}
